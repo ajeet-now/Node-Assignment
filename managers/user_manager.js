@@ -14,8 +14,8 @@ exports.process_get_user = async (input_data) => {
     return user;
 }
 
-exports.post_process_get_user = async (user, resp) => {
-    resp.status(200).send({status:"success",message:"user retrieved successfully",data:user})
+exports.post_process_get_user = async (data, resp) => {
+    resp.status(200).send({status:"success",message:"user retrieved successfully",data:{user: data}})
 }
 
 
@@ -35,7 +35,7 @@ exports.process_update_user = async (input_data) => {
 }
 
 exports.post_process_update_user = async (data, resp) => {
-    resp.status(200).send({status:"success",message:"user updated successfully", data:data})
+    resp.status(200).send({status:"success",message:"user updated successfully", data : {user : data}})
 }
 
 
@@ -58,5 +58,5 @@ exports.process_upload_profile_pic = async (input_data) => {
 }
 
 exports.post_process_upload_profile_pic = async (data,resp) => {
-    resp.status(200).send({status:"success",message:"profile pic updated successfully ", data:data})
+    resp.status(200).send({status:"success",message:"profile pic updated successfully ", data:{user:data}})
 }

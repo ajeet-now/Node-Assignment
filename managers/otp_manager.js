@@ -30,10 +30,10 @@ exports.process_generate = async (input) => {
     return { otp }
 }
 
-exports.post_process_generate = async (input, resp) => {
-    const { otp } = input
+exports.post_process_generate = async (data, resp) => {
+    const { otp } = data
     console.log("otp : ", otp);
-    resp.status(200).send({status:"success",message:"otp sent successfully", otp:otp})
+    resp.status(200).send({status:"success",message:"otp sent successfully", data:{otp}})
 }
 
 exports.pre_process_verify = async (req) => {
